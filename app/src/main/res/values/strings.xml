@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Spotify Clone</string>
+    <string name="popular_artists">Popular artists</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="library">Library</string>
+    <string name="premium">Premium</string>
+</resources>
