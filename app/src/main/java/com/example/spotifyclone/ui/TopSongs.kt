@@ -35,7 +35,7 @@ fun TopSongsWeekly(
             .padding(16.dp, 0.dp, 0.dp, 0.dp)
     ) {
         Text(
-            text = "Top weekly",
+            text = stringResource(R.string.top_weekly),
             fontFamily = dosis,
             fontWeight = FontWeight.ExtraBold,
             fontSize = 30.sp,
