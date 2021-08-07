@@ -5,4 +5,7 @@
     <string name="search">Search</string>
     <string name="library">Library</string>
     <string name="premium">Premium</string>
+    <string name="albums">Albums</string>
+    <string name="playlists">Playlists</string>
+    <string name="songs">Songs</string>
 </resources>

@@ -15,8 +15,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.spotifyclone.data.Artist
 import com.example.spotifyclone.data.BottomMenuContent
+import com.example.spotifyclone.data.PlayListType
 import com.example.spotifyclone.ui.BottomMenu
 import com.example.spotifyclone.ui.Header
+import com.example.spotifyclone.ui.PlayList
 import com.example.spotifyclone.ui.PopularArtists
 
 @Composable
@@ -31,6 +33,7 @@ fun MyMusic() {
                 //TODO search result
             }
             PopularArtists(artistList())
+            PlayList(playList())
         }
         Card(
             modifier = Modifier
@@ -59,5 +62,12 @@ private fun artistList() : List<Artist> {
     val artist5 = Artist ("Bruno Mars", R.drawable.bruno_mars)
     val artist6 = Artist ("Britney Spears", R.drawable.britney_spears)
     return listOf(artist1, artist2, artist3, artist4, artist5, artist6)
+}
+
+private fun playList() : List<PlayListType> {
+    val item1 = PlayListType("Lo-Fi Beats", R.drawable.lofi_beats)
+    val item2 = PlayListType("Deep Focus", R.drawable.deep_focus)
+    val item3 = PlayListType("Travel", R.drawable.travel)
+    return listOf(item1, item2, item3)
 }
 
