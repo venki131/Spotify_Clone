@@ -8,4 +8,6 @@
     <string name="albums">Albums</string>
     <string name="playlists">Playlists</string>
     <string name="songs">Songs</string>
+    <string name="hold_to_drag_item">Hold to drag item</string>
+    <string name="my_music">My Music</string>
 </resources>

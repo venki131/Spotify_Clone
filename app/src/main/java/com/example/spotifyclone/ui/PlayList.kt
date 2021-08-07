@@ -26,15 +26,16 @@ fun PlayList(
 ) {
     Column(
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.SpaceAround,
+        verticalArrangement = Arrangement.SpaceEvenly,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
     ) {
         Row(
-            horizontalArrangement = Arrangement.SpaceAround,
+            horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 16.dp, end = 16.dp, top = 8.dp)
         ) {
             Text(
                 text = stringResource(R.string.playlists),
@@ -58,15 +59,17 @@ fun PlayList(
                 color = Color.Gray
             )
         }
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(5.dp))
 
-        LazyRow {
+        LazyRow (
+            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
             items(playList.size) {
                 Box(
                     modifier = Modifier
                         .height(180.dp)
                         .width(200.dp)
-                        .padding(16.dp)
                 ) {
                     Image(
                         painter = painterResource(id = playList[it].playListImageId),

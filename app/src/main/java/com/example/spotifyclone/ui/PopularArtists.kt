@@ -30,7 +30,6 @@ fun PopularArtists(
         verticalArrangement = Arrangement.SpaceEvenly,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
     ) {
         Text(
             text = stringResource(R.string.popular_artists),
@@ -38,7 +37,8 @@ fun PopularArtists(
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Start,
             fontSize = 20.sp,
-            color = Color.Black
+            color = Color.Black,
+            modifier = Modifier.padding(start = 16.dp)
         )
         ArtistList(artists) {
             //Clicked
@@ -49,36 +49,38 @@ fun PopularArtists(
 @Composable
 fun ArtistList(
     artists: List<Artist>,
-    onClick : () -> Unit
+    onClick: () -> Unit
 ) {
-    LazyRow (contentPadding = PaddingValues(end= 10.dp)) {
+    LazyRow(
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
         items(artists.size) {
-                Column(
-                    verticalArrangement = Arrangement.SpaceAround,
-                    horizontalAlignment = Alignment.Start,
+            Column(
+                verticalArrangement = Arrangement.SpaceAround,
+                horizontalAlignment = Alignment.Start,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                Image(
+                    painter = painterResource(id = artists[it].artistImageId),
+                    contentDescription = artists[it].artistName,
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(15.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = artists[it].artistImageId),
-                        contentDescription = artists[it].artistName,
-                        modifier = Modifier
-                            .width(80.dp)
-                            .height(80.dp)
-                            .clip(RoundedCornerShape(50.dp))
-                            .clickable {
-                                onClick()
-                            }
-                    )
-                    Text(
-                        text = artists[it].artistName,
-                        fontFamily = dosis,
-                        fontWeight = FontWeight.SemiBold,
-                        color = Color.DarkGray,
-                        modifier = Modifier.align(Alignment.CenterHorizontally)
-                    )
-                }
+                        .width(80.dp)
+                        .height(80.dp)
+                        .clip(RoundedCornerShape(50.dp))
+                        .clickable {
+                            onClick()
+                        }
+                )
+                Text(
+                    text = artists[it].artistName,
+                    fontFamily = dosis,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.DarkGray,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                )
             }
+        }
     }
 }

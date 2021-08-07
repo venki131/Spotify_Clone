@@ -16,10 +16,8 @@ import androidx.compose.ui.unit.dp
 import com.example.spotifyclone.data.Artist
 import com.example.spotifyclone.data.BottomMenuContent
 import com.example.spotifyclone.data.PlayListType
-import com.example.spotifyclone.ui.BottomMenu
-import com.example.spotifyclone.ui.Header
-import com.example.spotifyclone.ui.PlayList
-import com.example.spotifyclone.ui.PopularArtists
+import com.example.spotifyclone.data.SongsWeekly
+import com.example.spotifyclone.ui.*
 
 @Composable
 fun MyMusic() {
@@ -34,6 +32,7 @@ fun MyMusic() {
             }
             PopularArtists(artistList())
             PlayList(playList())
+            TopSongsWeekly(songsList())
         }
         Card(
             modifier = Modifier
@@ -69,5 +68,13 @@ private fun playList() : List<PlayListType> {
     val item2 = PlayListType("Deep Focus", R.drawable.deep_focus)
     val item3 = PlayListType("Travel", R.drawable.travel)
     return listOf(item1, item2, item3)
+}
+
+private fun songsList() : List<SongsWeekly> {
+    val song1 = SongsWeekly(songName = "Levitating", artist = "Dua Lipa", coverArtId = R.drawable.dua_lipa)
+    val song2 = SongsWeekly(songName = "Levitating", artist = "Dua Lipa", coverArtId = R.drawable.dua_lipa)
+    val song3 = SongsWeekly(songName = "Levitating", artist = "Dua Lipa", coverArtId = R.drawable.dua_lipa)
+    val song4 = SongsWeekly(songName = "Levitating", artist = "Dua Lipa", coverArtId = R.drawable.dua_lipa)
+    return listOf(song1, song2, song3, song4)
 }
 
