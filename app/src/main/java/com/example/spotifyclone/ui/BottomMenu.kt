@@ -62,7 +62,7 @@ fun BottomMenuItem(
             contentAlignment = Alignment.Center,
             modifier = Modifier
                 .background(Color.Transparent)
-                .padding(10.dp)
+                .padding(12.dp)
         ) {
             Icon(
                 painter = painterResource(id = item.iconId),
